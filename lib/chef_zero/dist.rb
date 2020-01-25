@@ -5,5 +5,8 @@ module ChefZero
 
     # The binary alias
     CLIENT = "chef-zero".freeze
+
+    # A short name, no caps
+    SHORT = "chef".freeze
   end
 end

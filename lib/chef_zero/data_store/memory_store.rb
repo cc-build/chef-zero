@@ -23,9 +23,9 @@ require_relative "default_facade"
 module ChefZero
   module DataStore
     class MemoryStore < ChefZero::DataStore::V2ToV1Adapter
-      def initialize
+      def initialize(single_org = ChefZero::Dist::SHORT)
         super
-        @real_store = ChefZero::DataStore::DefaultFacade.new(ChefZero::DataStore::MemoryStoreV2.new, "chef", true)
+        @real_store = ChefZero::DataStore::DefaultFacade.new(ChefZero::DataStore::MemoryStoreV2.new, single_org, true)
         clear
       end
     end

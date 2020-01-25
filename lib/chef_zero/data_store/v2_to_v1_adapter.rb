@@ -21,8 +21,8 @@ require_relative "interface_v1"
 module ChefZero
   module DataStore
     class V2ToV1Adapter < ChefZero::DataStore::InterfaceV1
-      def initialize
-        @single_org = "chef"
+      def initialize(single_org = ChefZero::Dist::SHORT)
+        @single_org = single_org
       end
 
       attr_reader :real_store
